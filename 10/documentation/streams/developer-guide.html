@@ -16,7 +16,6 @@
 -->
 
 <!-- should always link the the latest release's documentation -->
-<!--#include virtual="../../streams/developer-guide.html" -->
 <!--
  Licensed to the Apache Software Foundation (ASF) under one or more
  contributor license agreements.  See the NOTICE file distributed with
@@ -54,28 +53,27 @@ limitations under the License.
 
 // Define variables for doc templates
 var context={
-    "version": "0110",
-    "dotVersion": "0.11.0",
-    "fullDotVersion": "0.11.0.2",
+    "version": "10",
+    "dotVersion": "1.0",
+    "fullDotVersion": "1.0.0",
     "scalaVersion": "2.11"
 };
 
 <!--#include virtual="../js/templateData.js" --></script>
 
 <script id="content-template" type="text/x-handlebars-template">
-   <h1>Developer Guide for Kafka Streams API</h1> 
+    <h1>Developer Guide for Kafka Streams API</h1>
     <div class="sub-nav-sticky">
-      <div class="sticky-top">
-        <div style="height:35px">
-          <a href="/{{version}}/documentation/streams/">Introduction</a>
-          <a class="active-menu-item" href="/{{version}}/documentation/streams/developer-guide">Developer Guide</a>
-          <a href="/{{version}}/documentation/streams/core-concepts">Concepts</a>
-          <a href="/{{version}}/documentation/streams/quickstart">Run Demo App</a>
-          <a href="/{{version}}/documentation/streams/tutorial">Tutorial: Write App</a>
+        <div class="sticky-top">
+            <div style="height:35px">
+                <a href="/{{version}}/documentation/streams/">简介</a>
+                <a class="active-menu-item" href="/{{version}}/documentation/streams/developer-guide.html">开发者指南</a>
+                <a href="/{{version}}/documentation/streams/core-concepts.html">核心思想</a>
+                <a  href="/{{version}}/documentation/streams/quickstart.html">运行 demo 程序</a>
+                <a href="/{{version}}/documentation/streams/tutorial.html">编写自己的流处理程序</a>
+            </div>
         </div>
-      </div>
-    </div> 
-
+    </div>
     <p>
         This developer guide describes how to write, configure, and execute a Kafka Streams application. There is a <a href="/{{version}}/documentation/#quickstart_kafkastreams">quickstart</a> example that provides how to run a stream processing program coded in the Kafka Streams library.
     </p>
@@ -3193,13 +3191,13 @@ Note that in the <code>WordCountProcessor</code> implementation, users need to r
   </div>
 </nav>
 
-    <!--#include virtual="../../includes/_nav.htm" -->
-    <div class="right">
-            <a class="documentation__banner b-sticky-doc-banner" href="/documentation">
+        <!--#include virtual="../../includes/_nav.htm" -->
+        <div class="right">
+                <a class="documentation__banner b-sticky-doc-banner" href="/documentation">
   You're viewing documentation for an older version of Kafka - check out our current documentation here.
 </a>
 
-        <!--#include virtual="../../includes/_docs_banner.htm" -->
+            <!--#include virtual="../../includes/_docs_banner.htm" -->
         <ul class="breadcrumbs">
             <li><a href="/documentation">Documentation</a></li>
             <li><a href="/documentation/streams">Kafka Streams API</a></li>
@@ -3321,24 +3319,26 @@ Note that in the <code>WordCountProcessor</code> implementation, users need to r
 <!--#include virtual="../../includes/_footer.htm" -->
 <script>
 $(function() {
-  // Show selected style on nav item
-  $('.b-nav__streams').addClass('selected');
-      
-   //sticky secondary nav
-   var $navbar = $(".sub-nav-sticky"),
+          // Show selected style on nav item
+          $('.b-nav__streams').addClass('selected');
+
+   
+          //sticky secondary nav
+          var $navbar = $(".sub-nav-sticky"),
                y_pos = $navbar.offset().top,
                height = $navbar.height();
        
-              $(window).scroll(function() {
-                 var scrollTop = $(window).scrollTop();
+           $(window).scroll(function() {
+               var scrollTop = $(window).scrollTop();
            
-                 if (scrollTop > y_pos - height) {
+               if (scrollTop > y_pos - height) {
                    $navbar.addClass("navbar-fixed")
-                 } else if (scrollTop <= y_pos) {
+               } else if (scrollTop <= y_pos) {
                    $navbar.removeClass("navbar-fixed")
-                 }
+               }
            });
-  // Display docs subnav items
-  $('.b-nav__docs').parent().toggleClass('nav__item__with__subs--expanded');
+           // Display docs subnav items
+           $('.b-nav__docs').parent().toggleClass('nav__item__with__subs--expanded');
 });
 </script>
+<!--#include virtual="../../streams/developer-guide.html" -->
